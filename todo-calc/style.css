@@ -1,0 +1,50 @@
+ul{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    cursor: pointer;
+    list-style-type: none;
+    background: skyblue;
+    font-size: 1.5em;
+    transition: 0.2s;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+ul li:nth-child(odd){
+    background: aliceblue;
+}
+.close{
+    position: absolute;
+   
+    right: 0;
+    top: 0;
+    padding: 3px 16px 12px 13px;
+
+}
+.close:hover{
+    background: #f44336;
+}
+#list{
+    color: white;
+}
+#list:hover{
+    color: rgb(212, 245, 255);
+}
+#head{
+    color:  rgb(212, 245, 255);
+
+    padding-top: 10px;
+}
+#listt{
+    color: white;
+}
+#listt:hover{
+    color: rgb(19, 126, 142);
+}
+
+

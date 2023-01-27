@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todocalc</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light  bg-info">
+                    <div class="navbar-brand h3" id="head">
+                        To-do List
+                    </div>
+                    <button class="navbar-toggler" aria-label="Toggle navigator" aria-controls="navMenu" data-toggle="collapse" data-target="#navMenu" aria-expanded="false"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navMenu">
+                        <div class="navbar-nav">
+                            <a href="index.html" class="nav-item nav-link" id="list">To-do</a>
+                            <a href="calc.html" class="nav-item nav-link" id="list">calculator</a>
+                            <a href="si.html" class="nav-item nav-link" id="list">Simple int</a>
+                        </div>
+                    </div>
+                </nav> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-4 offset-8 my-3">
+                <button class="dropdown-toggle btn btn-info" aria-labelledby="dropdownMenu" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">More Options</button>
+                <div class="dropdown-menu bg-info" id="dropdownMenu">
+                    <a href="new.html" class="dropdown-item" id="listt">Todo list</a>
+                    <a href="#" class="dropdown-item" id="listt">Si calculator</a>
+                    <a href="#" class="dropdown-item" id="listt">Calculator</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+              
+                <h2 class="text-center">To-do List</h2>
+                <hr style="width: 50%;" >
+                <div class="input-group my-2">
+                    <input type="text" class="form-control" placeholder="Enter task..." style="caret-color: skyblue;" id="myInput">
+                    <div class="input-append">
+                        <button class="btn btn-info" onclick="newElement()">
+                            Add
+                        </button>
+                    </div>
+                </div>
+              
+               
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul id="myUl">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function newElement(){
+            var list = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var text = document.createTextNode(inputValue);
+            list.appendChild(text);
+           
+            if(inputValue==""){
+                alert("Please enter a task");
+            }else{
+                document.getElementById("myUl").appendChild(list);
+            }
+            document.getElementById("myInput").value = "";
+            var span = document.createElement("span");
+            span.className = "close";
+            var txt = document.createTextNode("\u00D7");
+            span.appendChild(txt); 
+            list.appendChild(span); 
+            for(i=0; i<close.length; i++){
+                close[i].onclick = function(){
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+               
+            }
+        }
+        var close = document.getElementsByClassName("close");
+        for(i=0; i<close.length; i++){
+            close[i].onclick = function(){
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
